@@ -1,0 +1,1 @@
+This data was taken with the aim of investigating the form of the electric field. At this point, the telescope has been removed from the simulation. The depletion voltage of -30V is used, and the linear electric field equation solved to get the required sensor thickness.

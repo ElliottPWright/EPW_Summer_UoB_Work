@@ -1,0 +1,1 @@
+For this run of data, the beam size was reduced to 10nm, the detector was fully depleted at -30V and the pixel pitch was reduced to 1um. This was then run for all angles with 10E4 event. For this the telescope was also removed to limit the spread of proton entry to DUT. Instead of previous runs, 10E4 events are used here.

@@ -1,0 +1,1 @@
+Data taken with a 3x3 pixel matrix and 10nm beam width. Sensor is fully depleted with different depletion voltages and the sensor thickness is changed. The thicknesses are calculated using the w_d = k*(V_b)^1/2 formula for the depletion thickness.

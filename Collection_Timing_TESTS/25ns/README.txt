@@ -1,0 +1,1 @@
+This data was taken with the MALTA2 DUT. Measurements are taken at each bias voltage, up to the full depletion voltage of -30V. The beam size is 10um, the sensor thickness is 100um and the pixel matrix is 512 x 224. Integrated timing information is taken at 25ns. Pixel pitch, 36.4um.

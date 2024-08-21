@@ -1,0 +1,5 @@
+Instrumentation Summer School: https://indico.cern.ch/event/1416539/sessions/555715/#20240702
+
+GitHub wiki: https://github.com/BILPAware/wiki/blob/ElliottPWright-Wiki/docs/ElliottPWright_Summer_2024/Simulation.md
+
+ATLAS ITk: https://www.dropbox.com/scl/fi/sjxklgk3gb2z5e34875j6/tipp2021.pdf?rlkey=70at5vszowiaaq00rbk7zz8vq&e=1&st=pud9lppv&dl=0

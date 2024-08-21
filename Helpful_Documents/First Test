@@ -1,0 +1,27 @@
+TCAD Sentaurus Tutorial found at:
+
+file:///scratch/synopsys/sentaurus/V-2024.03/tcad/V-2024.03/Sentaurus_Training/index.html
+
+I would recommend reading the first few modules to gain an idea of how to use TCAD. Pay particular attention to Device Simulation, as this what we will use to measure the simulated sensor's electrical properties.
+
+Sentaurus Process can be used for fabrication, while Sentaurus Structure Editor uses pre-defined geometries. After a structure is generated, we can create a device to measure the electrical properties. To extract values from the simulation, the simulation flow must end with a Sentaurus Visual.
+
+NOTE: Sentaurus Workbench (SWB) comes with pre-prepared projects.
+
+Sentaurus Interconnect potential usage for multiple connected components 
+
+Sentaurus Project tab organised from top to bottom as: Total Flow (SPROCESS, SDEVICE, SVISUAL), Project Parameters, Simulation Tree.
+
+Nodes in the Simulation Tree contain data.
+
+SWB projects can be organised in two ways:
+	* Hierarchical: core project files, and simulation results are separated
+	* Traditional: all project data is placed in one directory
+
+Parallel processing will be required if a 3D simulation is constructed. 
+
+Decided to move on from Sentaurus Workbench tutorial after Section 6. Now working on to Sentaurus Structure Editor module.Can return to previous module for advice on Sentaurus preferences.
+
+To start Sentaurus Structure Editor on the command line, type: > sde
+
+03/07/24 NOTE: LOG NOW MOVED TO MARKDOWN IN GITHUB DIRECTORY FOUND AT: /scratch/synopsys/sentaurus/current/bin/wiki/docs

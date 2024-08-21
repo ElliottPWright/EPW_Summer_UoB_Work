@@ -1,0 +1,22 @@
+Installing
+
+/disk/moose/general/TCAD/downloads/
+
+Install SynopsysInstaller_v5.7.run by running ./SynopsysInstaller_v5.7.run
+
+Copy the downloads to a directory where you have write permissions.
+
+In the installed location of the installer.
+
+To install using installer, run the following inside where you installed the installer:
+
+./installer -gui
+
+Side ID Number: 7789/disk/moose/general/TCAD/downloads
+
+Select the location of the product that you want to install under the "Source" window. For example,
+
+/disk/moose/general/TCAD/downloads/tcad_sentaurus_vV-2024.03
+
+Ignore the not writtable error and select the installation location.
+
