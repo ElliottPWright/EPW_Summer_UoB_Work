@@ -1,0 +1,16 @@
+Start up the terminal and apply the following lines to set the license
+
+export SNPSLMD_LICENSE_FILE=27020@eplsv004
+export STROOT=/scratch/synopsys/sentaurus/current/
+
+
+cd into the directory containing sentaurus
+
+cd ${STROOT}/bin/
+
+
+Then open TCAD
+
+./swb
+
+
