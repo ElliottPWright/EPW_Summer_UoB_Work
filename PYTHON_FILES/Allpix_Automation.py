@@ -98,7 +98,7 @@ def save_to_csv(filename, mean_data, standard_deviation_data, mean_error):
 
 # Main function to run the automation
 def main():
-    bias_voltage = 15
+    bias_voltage = 30
     detector_file = '/home/user287/allpix-squared/Summe_Internship/Detector.conf'
     simulation_config_file = 'FullSim.conf'
     output_dir = f'/home/user287/Summer_Project_2024/ROOT_FILES/{bias_voltage}V'  # Specify the directory to save the ROOT files

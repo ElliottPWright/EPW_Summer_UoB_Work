@@ -1,4 +1,4 @@
-Data taken with a 3x3 pixel matrix and 10nm beam width. Sensor is fully depleted with different depletion voltages and the sensor thickness is changed. The thicknesses are calculated using the w_d = k*(V_b)^1/2 formula for the depletion thickness.
+Data taken with a 3x3 pixel matrix and 10nm beam width. This was done to check that the average cluster size would be 1 if we used a thin testbeam and a 3x3 pixel matrix of MALTA2-like pixels. Sensor is fully depleted with different depletion voltages and the sensor thickness is changed. The thicknesses are calculated using the w_d = k*(V_b)^1/2 formula for the depletion thickness.
 
 
 | Parameter        | Value                     |

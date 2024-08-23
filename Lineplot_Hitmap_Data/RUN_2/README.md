@@ -21,5 +21,6 @@ Data taken for 1 and 10E4 events with a 36.4um pixel pitch, 512 x 224 pixel matr
 
 : Simulation operational parameters
 
-
+Number of events = [1, 10000]
+output linegraphs = [true (for 1 event), false (for 10000 events)]
 Bias voltages = [0V, -6V, -9V, -15V, -20V, -25V, -30V, -50V]

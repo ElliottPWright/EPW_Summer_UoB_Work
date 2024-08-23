@@ -21,3 +21,5 @@ For this run of data, the beam size was reduced to 10nm, the detector was first 
 | Digitisation Threshold | 260e    |
 
 : Simulation operational parameters
+
+Sensor thicknesses = [10um, 20um, 30um, 40um, 50um]

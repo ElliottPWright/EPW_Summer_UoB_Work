@@ -1,0 +1,1 @@
+All the data contained here is potentially corrupted, in that the data taking process contained some faults for each bunch of data. The errors should be well-documented and serve as a cautionary tale to not repeat the mistakes I did.

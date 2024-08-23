@@ -1,0 +1,1 @@
+These folders are where you should send your outputted simulation ROOT files in the Allpix_Automation.py Python program.

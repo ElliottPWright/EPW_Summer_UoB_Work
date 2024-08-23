@@ -1,9 +1,36 @@
+# The Project
+
 ## Introduction:
 
-Hello everyone, I am Elliott, one of the UoB 2024 summer interns.My project has been validating the grazing angle method, which is used to determine the depletion depth of a sensor. For this investigation, a non-irradiated MALTA2 sensor was used. The motivation behind this was that Long had taken data with a sensor irradiated with 1 x 10$^{15}$ 1 MeV n$_{eq}$/cm$^2$ non ionising energy loss. We therefore wished to test whether an initial, more simplistic simulation would yield similar results to Long’s, thus verifying the use of the grazing angle method. Our sensor therefore had a linear electric field, as this was the simplest model other than a constant electric field. 
+Hello everyone, I am Elliott, one of the UoB 2024 summer interns. My project has been validating the grazing angle method, which is used to determine the depletion depth of a sensor. For this investigation, a simulation of a non-irradiated MALTA2 sensor constructed. The motivation behind this was that data had already been with a sensor irradiated with 1 x 10$^{15}$ 1 MeV n$_{eq}$/cm$^2$ non ionising energy loss. We therefore wished to test whether an initial, more simplistic simulation would yield similar results to experiment, thus verifying the use of the grazing angle method. Our sensor therefore had a linear electric field, as this was the simplest model other than a constant electric field. Included below is a brief outline of how this repository is organised, a summary of the main experiments conducted, and the conclusions so far.
+
+## Layout of the GitHub Repository
+
+This repository is organised into experiments, simulation files, and miscellaneous content such as Helpful_Documents. Each experiment contains a certain number of runs, which just represents the number of times I have conducted an experiment of a certain type. Within each run is CSV data for the cluster sizes on a sensor, and the ROOT files that contain the raw outputted data. If I felt the data was worth further investigation, there will also be plots included.
+
+## The Experiments
+
+Going chronologically, and negating some of the experiments that went no-where, the first experiment was Full_Telescope_RUN. In this investigation, a testbeam of 180 GeV proton was fired at 7 MALTA2 sensors, the fourth of which was our device under test (DUT). This DUT was rotated about the x-axis in 5-degree increments from 0 - 60 degrees. Increasing bias voltages, up to the depletion voltage of -30V, were applied to the sensor and the average cluster size was recorded for each angle at each bias voltage. 
+
+After this, we began to suspect that diffusion charges were altering our clustering data to not match experimental behaviour. We therefore then started Electric_Field_Reader_TESTS, where we wanted to see what would happen if the undepleted (drift) region of the sensor was cut-off, so all we had was the depleted (drift) region. We had to cut-off the sensor at the boundary between the depleted and undepleted regions, while maintaining the same electric field in the depletion region. This was achieved by calculating the width of the depletion region at each bias voltage, assuming that at –30 volts the depth is 100 microns. We could then reduce the thickness of the sensor to that value, and fully bias it with a depletion voltage equal to the old bias voltage. This investigation yielded results that better conformed to experiment. 
 
 
-Now we know the basis of the investigation, let’s get into the finer details. To start, let’s look at why MALTA2 was created in the first place.
+Next, with evidence to suggest that our data was skewed by the diffusion charges, we began Lineplot_Hitmap_Data. We decided that lineplots and hitmaps would be taken to visually see what goes on for different bias voltages. Using 1-micron pixel pitch for increased granularity and a 10nm beam size for more precise, repeatable hits on the sensor, data was taken with 1 event for the lineplots and 10E4 events for the hitmaps. An important note here is that all the telescope sensors, apart from the DUT, were removed for this investigation and onwards.
+
+
+Finally, in Collection_Timing_TESTS, an attempt was made to remove the diffusion charges by reducing the integration time, i.e. the time over which e/h pairs are propagated. As diffusion charges are moderated by thermodynamic processes, compared to drift charges which move to the collection electrode by the electric field, they move slower. Therefore, we reduced the integration time from 25ns to 2ns and then finally to 10ps, however this yielded an undesired effect. Instead, the data all converged to the original 25ns, –30V data.
+
+
+## Conclusions:
+
+In conclusion, we have seen that the determination of the depletion depth of a sensor via the grazing angle method is not fully understood. At low angles and bias voltages it is suspected that diffusion charges play a significant role, reducing the depletion depth’s conformity to what is predicted. To understand this behaviour further, we must improve the sophistication of our simulation. The most obvious way to do this is by replacing the linear electric field with a mesh field constructed in a TCAD software such as sentaurus device editor. However, visualisation does not work currently, so this was unattainable in the timeframe of the internship. However, with such software we could add the n-gap, extra deep p-well, and CMOS technology to shape the electric field to be closer to that of MALTA2.
+
+
+# Appendicies
+
+## Introduction
+
+The following appendices are based on the presentation I gave to the University of Birmingham BILPA group. They should be read to give some context on the project. The reader is also directed to PRESENTATION_NOTES to see the presentation and associated speech, as well as Helpful_Documents for further reading. Now let's get to some context.
 
 ## HL - LHC Upgrade:
 
@@ -17,19 +44,19 @@ These pixels are hybrids, which means the readout chip or ASIC is bump-bonded to
 
 DMAPS are advantageous over current hybrid sensors as they: can have a smaller pixel pitch, i.e. 36.4 x 36.4$\mu$m$^{2}$ squared for the MALTA2 sensor compared to 50 by 50 for the ATLAS ITk; contain one chip, not two; require a lower material budget without the glue. Seen in this figure is a standard CMOS DMAPS, with the readout electronics located at the top. One can also see that the depletion zone does not cover the full extent of the epitaxial layer. MALTA2 was targeted for the outermost layer in ATLAS ITk, however due to limited production, this was not achieved. One potential future use of MALTA2 is in the innermost ITk layer, although this will require improvements in its radiation hardness, which is currently target at 3 x 10\^15 1 MeV neutron equivalents per square centimetre.
 
-Standard CMOS Sensors vs MALTA2:
+## Standard CMOS Sensors vs MALTA2:
 
 MALTA2 is a modified DMAPS which contains a low dose n-type implant and an extra deep p-well. The implant here changes the depletion region such that it is more rectangular and covers the implant and epitaxial layers. The p-well here guides the electric field such that charge does not cross between the pixels. Thus, charge collection by drift, rather than diffusion, dominates, reducing charge sharing between pixels and increasing the signal to noise ratio.
 
 Here you can see the depletion region boundaries of a DMAPS, with the depletion depth being of the order of 100 microns. This is an improvement on the 1 micron depletion depth for hybrid sensors.
 
-The Grazing Angle Method:
+## The Grazing Angle Method:
 
 Now that we have introduced the MALTA2 sensor, we want to characterise its radiation hardness. As previously mentioned, the aim for MALTA2 is 3 x 10\^15 1 MeV neutron equivalent per centimetre square. Current test beam data taken by Long, which will be presented in the coming weeks, was taken at 1/3 that value. One method of characterising radiation hardness is via the depletion depth. If the depletion depth has decreased compared to what is expected given the bias voltage, we may well conclude that the minority charge carrier lifetime has decreased. Thus, a lower proportion of electron-hole pairs produce observable signals in the detector. The grazing angle method is one method of determining the depletion depth, illustrated in this figure, showing how the cluster size for a given beam incident angle relates to the pixel pitch and depletion depth.
 
 We can measure the cluster size, and we have the pixel pitch, so a simple rearrangement yields the depletion depth. However, we need to verify this method by simulating a similar sensor test beam investigation to Long’s.
 
-Allpix Squared:
+## Allpix Squared:
 
 The simulation software chosen for this investigation was allpix squared. For those of you unfamiliar with allpix squared, it is a Monte Carlo simulation software that uses Geant4 to simulate charge-matter interactions. And if you don’t know Geant4, it is a software used for modelling the propagation of charges through materials. If you’re anything like me, visualising your set-up is a good example of a quick sanity check that your simulation is running. The figure here shows the simulation set-up for the telescope test beam simulation, where the blue line is the proton beam. We use 7 MALTA2 sensors, with the fourth being the device under test (DUT), the sensor being rotated. Another aspect of allpix that is helpful is the readability of the configuration files, and the well documented modules that can be found here.
 
@@ -109,8 +136,3 @@ As previously seen, the data appears to be giving results closer to a fully depl
 
 Data was taken at –60V as unirradiated data taken by Long indicated the depletion depth to be –60V. Here we see the cluster size against tan(angle) data, and once again fits for tan(angle) \> 0.5 were produced. The behaviour of the depletion depth against bias voltage is no different to when the depletion voltage was –30V. The sensor still has a higher than predicted depletion depth for each bias voltage.
 
-Conclusion:
-
-In conclusion, we have seen that the determination of the depletion depth of a sensor via the grazing angle method is not fully understood. At low angles and bias voltages it is suspected that diffusion charges play a significant role, reducing the depletion depth’s conformity to what is predicted. To understand this behaviour further, we must improve the sophistication of our simulation. The most obvious way to do this is by replacing the linear electric field with a mesh field constructed in a TCAD software such as sentaurus device editor. However, visualisation does not work currently, so this was unattainable in the timeframe of the internship. However, with such software we could add the n-gap, extra deep p-well, and CMOS technology to shape the electric field to be closer to that of MALTA2.
-
-Thank you very much for listening and generally welcoming me into your group. It has been a pleasure to work with you all.
